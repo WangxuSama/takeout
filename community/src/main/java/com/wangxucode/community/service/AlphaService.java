@@ -3,6 +3,7 @@ package com.wangxucode.community.service;
 import com.wangxucode.community.dao.AlphaDao;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,7 @@ public class AlphaService {
     public void init() {
 //        System.out.println("初始化AlphaService");
     }
+
 
     @PreDestroy
     public void destroy() {

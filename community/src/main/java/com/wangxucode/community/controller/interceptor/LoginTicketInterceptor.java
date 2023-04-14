@@ -5,8 +5,8 @@ import com.wangxucode.community.entity.User;
 import com.wangxucode.community.service.UserService;
 import com.wangxucode.community.util.CookieUtil;
 import com.wangxucode.community.util.HostHolder;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -23,6 +23,8 @@ public class LoginTicketInterceptor implements HandlerInterceptor {
     @Autowired
     private HostHolder hostHolder;
 
+
+
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         // 从cookie中获取凭证
@@ -36,7 +38,7 @@ public class LoginTicketInterceptor implements HandlerInterceptor {
                 // 根据凭证查询用户
                 User user = userService.findUserById(loginTicket.getUserId());
                 // 在本次请求中持有用户
-                hostHolder.setUsers(user);
+                hostHolder.setUser(user);
             }
         }
 

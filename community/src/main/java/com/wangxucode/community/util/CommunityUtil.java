@@ -1,6 +1,6 @@
 package com.wangxucode.community.util;
 
-import cn.hutool.crypto.digest.DigestUtil;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.DigestUtils;
 
